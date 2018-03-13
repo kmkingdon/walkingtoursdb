@@ -12,7 +12,7 @@ module.exports = {
             .insert(body)
             .returning("*")
             .then(record => record[0]);
-    }
+    },
     update(db, id, body){
       return database(db)
             .update(body)
