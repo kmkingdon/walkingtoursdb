@@ -19,6 +19,12 @@ app.get("/tours", (request, response) => {
     }).catch(console.error);
 });
 
+app.get("/stops", (request, response) => {
+    queries.list("stops").then(stops => {
+        response.json({stops});
+    }).catch(console.error);
+});
+
 app.get("/tours/:id", (request, response) => {
     queries.read("tours", request.params.id).then(tours => {
         tours
